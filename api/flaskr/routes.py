@@ -4,6 +4,10 @@ from flask import Blueprint
 
 core_api = Blueprint('api', __name__)
 
+@core_api.route('/hello')
+def hello():
+    return 'Hello, World'
+
 @core_api.route('/time')
 def get_time():
     return {'time': strftime("%a, %d %b %Y %H:%M:%S", localtime())}
